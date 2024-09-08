@@ -1,0 +1,30 @@
+num_list = []
+for i in range(100):
+    num_list.append(i)
+found = False
+
+midpoint = (len(num_list)/2)
+midpoint = int(midpoint)
+print("Is the value " + str(midpoint) + " your number?")
+count = 0
+
+while found == False:
+    statement = input("Please insert either low, high, right, based on the number you have in mind relative to the guessed number")
+    statement = str(statement)
+    if statement == "low":
+        num_list = num_list[:midpoint]
+        found = False
+        print(num_list)
+        count += 1
+    elif statement == "high":
+        num_list = num_list[midpoint:]
+        found = False
+        print(num_list)
+        count += 1
+    else:
+        print("Found the number! " + str(num_list[midpoint]) + " was the number " + " it took me " + str(count) + " guesses to get the number")
+        found = True
+        break
+    midpoint = (len(num_list)/2)
+    midpoint = int(midpoint)
+    print("Is the value " + str(num_list[midpoint]) + " your number?")
