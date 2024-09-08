@@ -1,0 +1,43 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+
+
+#
+# Complete the 'longestEvenWord' function below.
+#
+# The function is expected to return a STRING.
+# The function accepts STRING sentence as parameter.
+#
+
+#Example for testing (Not sure why the built-in test was not working)
+sentence = "Time to write great code"
+
+
+def longestEvenWord(sentence):
+    # Write your code here
+    place = 0
+    length_list = []
+    words = sentence.split()
+    for word in words:
+        length_list.append(len(word))
+    print(length_list)
+    
+    for length in length_list:
+        even_nums = []
+        if length % 2 == 0:
+            even_nums.append(length)
+    largest_value = max(even_nums)
+    
+    for position in length_list:
+        if position == largest_value:
+            place == position
+            break
+    print("The longest even numbered word is: " + str(words[place]))
+    
+longestEvenWord(sentence)
